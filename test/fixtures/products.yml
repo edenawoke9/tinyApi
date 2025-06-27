@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  tagline: MyString
+  description: MyText
+  logo_url: MyString
+  website_url: MyString
+  gallery_image_urls: MyText
+  launch_date: 2025-06-26 14:27:48
+  maker: one
+
+two:
+  name: MyString
+  tagline: MyString
+  description: MyText
+  logo_url: MyString
+  website_url: MyString
+  gallery_image_urls: MyText
+  launch_date: 2025-06-26 14:27:48
+  maker: two
