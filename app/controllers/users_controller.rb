@@ -1,19 +1,24 @@
 class UsersController < ApplicationController
-    def add_account
-        user=User.new(allowed_params)
-        if user.save
-            render json: {message:"account created sucessfully"}, status: :created
-        else 
-            render json: {message:"account not created "}, status: :unprocessibleintity 
-        end
+    skip_before_action :authenticate_user!, only: [:add_account]
 
+    def add_account
+        user = User.new(allowed_params)
+        if user.save
+            render json: { message: "account created successfully" }, status: :created
+        else 
+            render json: { message: "account not created" }, status: :unprocessable_entity
+        end
     end 
+    def show 
+        user=User.find(params[:id])
+        render json: user
+    end
     def collections
         user = User.find(params[:id])
         render json: user.products
     end
     def reviews
-        user=User.find(params[:id])
+        user = User.find(params[:id])
         render json: user.comments, status: :ok
     end
     def update_account
@@ -29,6 +34,42 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         user.destroy
         render json: { message: 'User account deleted successfully.' }
+    end
+
+    # List followers of a user
+    def followers
+      user = User.find(params[:id])
+      render json: user.followers
+    end
+
+    # List users this user is following
+    def following
+      user = User.find(params[:id])
+      render json: user.following
+    end
+
+    # Follow another user
+    def follow
+      user = User.find(params[:id])
+      target = User.find(params[:target_id])
+      if user.following.include?(target)
+        render json: { message: 'Already following' }, status: :unprocessable_entity
+      else
+        user.following << target
+        render json: { message: 'Now following user' }, status: :ok
+      end
+    end
+
+    # Unfollow another user
+    def unfollow
+      user = User.find(params[:id])
+      target = User.find(params[:target_id])
+      if user.following.include?(target)
+        user.following.destroy(target)
+        render json: { message: 'Unfollowed user' }, status: :ok
+      else
+        render json: { message: 'Not following user' }, status: :unprocessable_entity
+      end
     end
 
     private

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_090741) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_29_080742) do
   create_table "comments", force: :cascade do |t|
     t.integer "product_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content"
     t.index ["product_id"], name: "index_comments_on_product_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -32,8 +33,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_090741) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "week"
-    t.string "upvote"
     t.string "integer"
+    t.integer "upvote", default: 0
     t.index ["maker_id"], name: "index_products_on_maker_id"
   end
 
@@ -77,9 +78,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_090741) do
 
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
-  add_foreign_key "products", "makers"
+  add_foreign_key "products", "users", column: "maker_id"
+  add_foreign_key "products", "users", column: "maker_id"
   add_foreign_key "upvotes", "products"
   add_foreign_key "upvotes", "users"
-  add_foreign_key "user_follow_users", "followers"
-  add_foreign_key "user_follow_users", "followings"
+  add_foreign_key "user_follow_users", "users", column: "follower_id"
+  add_foreign_key "user_follow_users", "users", column: "following_id"
 end

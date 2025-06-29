@@ -21,6 +21,14 @@ gem "solid_queue"
 gem "solid_cable"
 gem "devise"
 
+# OAuth authentication
+gem "google-id-token"
+gem "jwt"
+gem "octokit"
+
+# Environment variables
+gem "dotenv-rails", groups: [:development, :test]
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
