@@ -1,0 +1,338 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/products/{product_id}/comments":
+    parameters:
+    - name: product_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves all comments for a product
+      tags:
+      - Comments
+      responses:
+        '200':
+          description: comments list
+    post:
+      summary: Creates a comment for a product
+      tags:
+      - Comments
+      parameters: []
+      responses:
+        '201':
+          description: comment created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: object
+                  properties:
+                    content:
+                      type: string
+                    user_id:
+                      type: integer
+                  required:
+                  - content
+                  - user_id
+  "/products/{product_id}/comments/{id}":
+    parameters:
+    - name: product_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Updates a comment
+      tags:
+      - Comments
+      parameters: []
+      responses:
+        '200':
+          description: comment updated
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: object
+                  properties:
+                    content:
+                      type: string
+    delete:
+      summary: Deletes a comment
+      tags:
+      - Comments
+      responses:
+        '204':
+          description: comment deleted
+  "/products":
+    get:
+      summary: list products
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create product
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                tagline:
+                  type: string
+                description:
+                  type: string
+                logo_url:
+                  type: string
+                website_url:
+                  type: string
+                gallery_image_urls:
+                  type: array
+                  items:
+                    type: string
+                launch_date:
+                  type: string
+                  format: date
+                maker_id:
+                  type: integer
+              required:
+              - name
+              - tagline
+              - maker_id
+  "/products/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show product
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update product
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                tagline:
+                  type: string
+    put:
+      summary: update product
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                tagline:
+                  type: string
+    delete:
+      summary: delete product
+      responses:
+        '200':
+          description: successful
+  "/users":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    username:
+                      type: string
+                    full_name:
+                      type: string
+                    headline:
+                      type: string
+                  required:
+                  - email
+                  - password
+                  - username
+  "/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves a user
+      tags:
+      - Users
+      responses:
+        '200':
+          description: user found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  username:
+                    type: string
+                  full_name:
+                    type: string
+                  headline:
+                    type: string
+    put:
+      summary: Updates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: user updated
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    headline:
+                      type: string
+  "/users/{id}/followers":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves user followers
+      tags:
+      - Users
+      responses:
+        '200':
+          description: followers list
+  "/users/{id}/following":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves users being followed
+      tags:
+      - Users
+      responses:
+        '200':
+          description: following list
+  "/users/{id}/follow":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Follows a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: user followed
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target_id:
+                  type: integer
+              required:
+              - target_id
+  "/users/{id}/unfollow":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: Unfollows a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: user unfollowed
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target_id:
+                  type: integer
+              required:
+              - target_id
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
