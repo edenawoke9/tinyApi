@@ -2,11 +2,16 @@ class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:add_account]
 
     def add_account
-        user = User.new(allowed_params)
-        if user.save
-            render json: { message: "account created successfully" }, status: :created
-        else 
-            render json: { message: "account not created" }, status: :unprocessable_entity
+        user= User.find_by(pid: params[:pid])
+        if user.present?
+            render json: { message: "account already exists" }, status: :unprocessable_entity
+        else
+            user = User.new(allowed_params)
+            if user.save
+                render json: { message: "account created successfully", user: user }, status: :created
+            else 
+                render json: { message: "account not created" }, status: :unprocessable_entity
+            end
         end
     end 
     def show 
@@ -75,6 +80,6 @@ class UsersController < ApplicationController
     private
 
     def allowed_params
-        params.require(:user).permit(:email, :password, :username, :full_name, :headline, :profile_image_url, :website_url, :linkedin, :twitter)
+        params.require(:user).permit(:email, :password, :username, :full_name, :headline, :profile_image_url, :website_url, :linkedin, :twitter, :pid)
     end
 end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :update, :destroy, :show] do
     get :collections, on: :member
     member do
+      post :add_account
       get :followers
       get :following
       post :follow
@@ -26,6 +27,9 @@ Rails.application.routes.draw do
     member do
       post 'upvote'
       post 'downvote'
+    end
+    collection do
+      get 'month_products'
     end
     resources :comments, only: [:index, :create, :update, :destroy]
   end

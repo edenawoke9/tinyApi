@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
-    def week_products
-        products=Product.where(week: params[:week])
+    
+
+    def month_products
+        products=Product.where(month: params[:month])
         render json: products, status: :ok
 
     end
@@ -10,8 +12,8 @@ class ProductsController < ApplicationController
     end
     def create
         launch_date = params[:launch_date].present? ? Date.parse(params[:launch_date]) : Date.today
-        week_start = launch_date.beginning_of_week(:monday)
-        product = Product.new(allowed_params.merge(week: week_start))
+        month_start = launch_date.beginning_of_month
+        product = Product.new(allowed_params.merge(month: month_start))
 
         if product.save
             render json: { message: "Product created successfully" }, status: :created
@@ -49,6 +51,6 @@ class ProductsController < ApplicationController
 
     private
     def allowed_params
-        params.permit(:name, :tagline, :description, :logo_url, :website_url, :gallery_image_urls, :launch_date, :maker_id, :week )
+        params.permit(:name, :tagline, :description, :logo_url, :website_url, :gallery_image_urls, :launch_date, :maker_id, :month )
     end
 end

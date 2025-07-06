@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: tinyapi
+    env: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tinyapi-db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_LOG_TO_STDOUT
+        value: true
+
+databases:
+  - name: tinyapi-db
+    databaseName: tinyapi
+    user: tinyapi
+    plan: free 
