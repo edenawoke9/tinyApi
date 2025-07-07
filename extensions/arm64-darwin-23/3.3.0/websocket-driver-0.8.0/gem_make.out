@@ -1,0 +1,18 @@
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/websocket-driver-0.8.0/ext/websocket-driver
+/Users/eden/.local/share/mise/installs/ruby/3.3.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-6a3ofl sitelibdir\=./.gem.20250706-55568-6a3ofl clean
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-6a3ofl sitelibdir\=./.gem.20250706-55568-6a3ofl
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-6a3ofl sitelibdir\=./.gem.20250706-55568-6a3ofl install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20250706-55568-6a3ofl
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-6a3ofl sitelibdir\=./.gem.20250706-55568-6a3ofl clean

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:add_account]
 
     def add_account
-        user= User.find_by(pid: params[:pid])
+        user = User.find_by(pid: params[:pid])
         if user.present?
             render json: { message: "account already exists" }, status: :unprocessable_entity
         else
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         end
     end 
     def show 
-        user=User.find(params[:id])
+        user = User.find(params[:id])
         render json: user
     end
     def collections
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     def delete_account
         user = User.find(params[:id])
         user.destroy
-        render json: { message: 'User account deleted successfully.' }
+        render json: { message: "User account deleted successfully." }
     end
 
     # List followers of a user
@@ -58,10 +58,10 @@ class UsersController < ApplicationController
       user = User.find(params[:id])
       target = User.find(params[:target_id])
       if user.following.include?(target)
-        render json: { message: 'Already following' }, status: :unprocessable_entity
+        render json: { message: "Already following" }, status: :unprocessable_entity
       else
         user.following << target
-        render json: { message: 'Now following user' }, status: :ok
+        render json: { message: "Now following user" }, status: :ok
       end
     end
 
@@ -71,9 +71,9 @@ class UsersController < ApplicationController
       target = User.find(params[:target_id])
       if user.following.include?(target)
         user.following.destroy(target)
-        render json: { message: 'Unfollowed user' }, status: :ok
+        render json: { message: "Unfollowed user" }, status: :ok
       else
-        render json: { message: 'Not following user' }, status: :unprocessable_entity
+        render json: { message: "Not following user" }, status: :unprocessable_entity
       end
     end
 

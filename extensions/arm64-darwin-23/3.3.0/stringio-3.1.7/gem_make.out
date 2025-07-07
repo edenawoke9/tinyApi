@@ -1,0 +1,19 @@
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/stringio-3.1.7/ext/stringio
+/Users/eden/.local/share/mise/installs/ruby/3.3.0/bin/ruby extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-wdwfc5 sitelibdir\=./.gem.20250706-55568-wdwfc5 clean
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-wdwfc5 sitelibdir\=./.gem.20250706-55568-wdwfc5
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-wdwfc5 sitelibdir\=./.gem.20250706-55568-wdwfc5 install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20250706-55568-wdwfc5
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-wdwfc5 sitelibdir\=./.gem.20250706-55568-wdwfc5 clean

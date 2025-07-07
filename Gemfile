@@ -27,6 +27,7 @@ gem "devise"
 gem "google-id-token"
 gem "jwt"
 gem "octokit"
+gem "faraday-retry"
 
 # Environment variables
 gem "dotenv-rails", groups: [:development, :test]
@@ -60,6 +61,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # RuboCop Discourse
+  gem "rubocop-discourse"
 end
 
 

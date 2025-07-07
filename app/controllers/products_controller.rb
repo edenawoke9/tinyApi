@@ -2,12 +2,11 @@ class ProductsController < ApplicationController
     
 
     def month_products
-        products=Product.where(month: params[:month])
+        products = Product.where(month: params[:month])
         render json: products, status: :ok
-
     end
     def index
-        products=Product.all
+        products = Product.all
         render json: products, status: :ok
     end
     def create

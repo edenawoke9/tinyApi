@@ -1,0 +1,19 @@
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/debug-1.11.0/ext/debug
+/Users/eden/.local/share/mise/installs/ruby/3.3.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-c3y69t sitelibdir\=./.gem.20250706-55568-c3y69t clean
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-c3y69t sitelibdir\=./.gem.20250706-55568-c3y69t
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-c3y69t sitelibdir\=./.gem.20250706-55568-c3y69t install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20250706-55568-c3y69t/debug
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-c3y69t sitelibdir\=./.gem.20250706-55568-c3y69t clean

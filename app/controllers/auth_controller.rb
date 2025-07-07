@@ -9,7 +9,7 @@ class AuthController < ApplicationController
     Rails.logger.info "Auth Debug - Token: #{token&.first(10)}..., Provider: #{provider}"
     
     unless token
-      render json: { error: 'Missing authorization token' }, status: :unauthorized
+      render json: { error: "Missing authorization token" }, status: :unauthorized
       return
     end
 
@@ -30,16 +30,16 @@ class AuthController < ApplicationController
             linkedin: user.linkedin,
             twitter: user.twitter
           },
-          message: 'Token verified successfully',
-          debug: { provider: provider, token_preview: token.first(10) + '...' }
+          message: "Token verified successfully",
+          debug: { provider: provider, token_preview: token.first(10) + "..." }
         }
       else
-        render json: { error: 'Invalid token' }, status: :unauthorized
+        render json: { error: "Invalid token" }, status: :unauthorized
       end
     rescue AuthService::AuthenticationError => e
-      render json: { 
-        error: e.message, 
-        debug: { provider: provider, token_preview: token.first(10) + '...' }
+      render json: {
+        error: e.message,
+        debug: { provider: provider, token_preview: token.first(10) + "..." }
       }, status: :unauthorized
     end
   end
@@ -52,8 +52,8 @@ class AuthController < ApplicationController
         "2. Frontend Integration": "Use useSession hook to get accessToken and provider",
         "3. API Calls": "Send tokens with Authorization header"
       },
-      google_client_id: ENV['GOOGLE_CLIENT_ID'],
-      github_client_id: ENV['GITHUB_ID'],
+      google_client_id: ENV["GOOGLE_CLIENT_ID"],
+      github_client_id: ENV["GITHUB_ID"],
       test_endpoint: "POST /auth/verify",
       headers: {
         "Authorization": "Bearer provider:access_token",

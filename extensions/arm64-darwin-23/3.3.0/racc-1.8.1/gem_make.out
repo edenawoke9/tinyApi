@@ -1,0 +1,18 @@
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/racc-1.8.1/ext/racc/cparse
+/Users/eden/.local/share/mise/installs/ruby/3.3.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-rrd4vj sitelibdir\=./.gem.20250706-55568-rrd4vj clean
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-rrd4vj sitelibdir\=./.gem.20250706-55568-rrd4vj
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-rrd4vj sitelibdir\=./.gem.20250706-55568-rrd4vj install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20250706-55568-rrd4vj/racc
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-rrd4vj sitelibdir\=./.gem.20250706-55568-rrd4vj clean

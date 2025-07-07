@@ -1,0 +1,22 @@
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/bootsnap-1.18.6/ext/bootsnap
+/Users/eden/.local/share/mise/installs/ruby/3.3.0/bin/ruby extconf.rb
+checking for fdatasync() in unistd.h... yes
+checking for whether -D_GNU_SOURCE is accepted as CPPFLAGS... yes
+checking for whether -O3 is accepted as CFLAGS... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/bootsnap-1.18.6/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-v24x1f sitelibdir\=./.gem.20250706-55568-v24x1f clean
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/bootsnap-1.18.6/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-v24x1f sitelibdir\=./.gem.20250706-55568-v24x1f
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/bootsnap-1.18.6/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-v24x1f sitelibdir\=./.gem.20250706-55568-v24x1f install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20250706-55568-v24x1f/bootsnap
+
+current directory: /Users/eden/Desktop/rails-test/tinyApi/gems/bootsnap-1.18.6/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20250706-55568-v24x1f sitelibdir\=./.gem.20250706-55568-v24x1f clean
