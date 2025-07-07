@@ -9,4 +9,5 @@
 
 AllCops:
   Exclude:
+    - 'vendor/**/*'
     - 'gems/**/*'
