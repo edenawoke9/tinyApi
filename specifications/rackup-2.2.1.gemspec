@@ -1,26 +1,31 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 # stub: rackup 2.2.1 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "rackup".freeze
-  s.version = "2.2.1".freeze
+  s.name = 'rackup'
+  s.version = '2.2.1'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
-  s.metadata = { "rubygems_mfa_required" => "true", "source_code_uri" => "https://github.com/rack/rackup.git" } if s.respond_to? :metadata=
-  s.require_paths = ["lib".freeze]
-  s.authors = ["Samuel Williams".freeze, "James Tucker".freeze, "Leah Neukirchen".freeze, "Jeremy Evans".freeze, "Joshua Peek".freeze, "Megan Batty".freeze, "Rafael Fran\u00E7a".freeze, "Anurag Priyam".freeze, "Max Cantor".freeze, "Michael Fellinger".freeze, "Sophie Deziel".freeze, "Yoshiyuki Hirano".freeze, "Aaron Patterson".freeze, "Jean Boussier".freeze, "Katsuhiko Yoshida".freeze, "Konstantin Haase".freeze, "Krzysztof Rybka".freeze, "Martin Hrdlicka".freeze, "Nick LaMuro".freeze, "Aaron Pfeifer".freeze, "Akira Matsuda".freeze, "Andrew Bortz".freeze, "Andrew Hoglund".freeze, "Bas Vodde".freeze, "Blake Mizerany".freeze, "Carl Lerche".freeze, "David Celis".freeze, "Dillon Welch".freeze, "Genki Takiuchi".freeze, "Geremia Taglialatela".freeze, "Hal Brodigan".freeze, "Hrvoje \u0160imi\u0107".freeze, "Igor Bochkariov".freeze, "Jeremy Kemper".freeze, "Joe Fiorini".freeze, "John Barnette".freeze, "John Sumsion".freeze, "Julik Tarkhanov".freeze, "Kang Sheng".freeze, "Kazuya Hotta".freeze, "Lenny Marks".freeze, "Loren Segal".freeze, "Marc-Andr\u00E9 Cournoyer".freeze, "Misaki Shioi".freeze, "Olle Jonsson".freeze, "Peter Wilmott".freeze, "Petrik de Heus".freeze, "Richard Schneeman".freeze, "Ryunosuke Sato".freeze, "Sean McGivern".freeze, "Stephen Paul Weber".freeze, "Tadashi Saito".freeze, "Tim Moore".freeze, "Timur Batyrshin".freeze, "Trevor Wennblom".freeze, "Tsutomu Kuroda".freeze, "Uchio Kondo".freeze, "Wyatt Pan".freeze, "Yehuda Katz".freeze, "Zachary Scott".freeze]
-  s.date = "2024-11-13"
-  s.executables = ["rackup".freeze]
-  s.files = ["bin/rackup".freeze]
-  s.homepage = "https://github.com/rack/rackup".freeze
-  s.licenses = ["MIT".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-  s.rubygems_version = "3.5.3".freeze
-  s.summary = "A general server command for Rack applications.".freeze
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  if s.respond_to? :metadata=
+    s.metadata = { 'rubygems_mfa_required' => 'true',
+                   'source_code_uri' => 'https://github.com/rack/rackup.git' }
+  end
+  s.require_paths = ['lib']
+  s.authors = ['Samuel Williams', 'James Tucker', 'Leah Neukirchen', 'Jeremy Evans',
+               'Joshua Peek', 'Megan Batty', "Rafael Fran\u00E7a", 'Anurag Priyam', 'Max Cantor', 'Michael Fellinger', 'Sophie Deziel', 'Yoshiyuki Hirano', 'Aaron Patterson', 'Jean Boussier', 'Katsuhiko Yoshida', 'Konstantin Haase', 'Krzysztof Rybka', 'Martin Hrdlicka', 'Nick LaMuro', 'Aaron Pfeifer', 'Akira Matsuda', 'Andrew Bortz', 'Andrew Hoglund', 'Bas Vodde', 'Blake Mizerany', 'Carl Lerche', 'David Celis', 'Dillon Welch', 'Genki Takiuchi', 'Geremia Taglialatela', 'Hal Brodigan', "Hrvoje \u0160imi\u0107", 'Igor Bochkariov', 'Jeremy Kemper', 'Joe Fiorini', 'John Barnette', 'John Sumsion', 'Julik Tarkhanov', 'Kang Sheng', 'Kazuya Hotta', 'Lenny Marks', 'Loren Segal', "Marc-Andr\u00E9 Cournoyer", 'Misaki Shioi', 'Olle Jonsson', 'Peter Wilmott', 'Petrik de Heus', 'Richard Schneeman', 'Ryunosuke Sato', 'Sean McGivern', 'Stephen Paul Weber', 'Tadashi Saito', 'Tim Moore', 'Timur Batyrshin', 'Trevor Wennblom', 'Tsutomu Kuroda', 'Uchio Kondo', 'Wyatt Pan', 'Yehuda Katz', 'Zachary Scott']
+  s.date = '2024-11-13'
+  s.executables = ['rackup']
+  s.files = ['bin/rackup']
+  s.homepage = 'https://github.com/rack/rackup'
+  s.licenses = ['MIT']
+  s.required_ruby_version = Gem::Requirement.new('>= 2.5')
+  s.rubygems_version = '3.5.3'
+  s.summary = 'A general server command for Rack applications.'
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = '3.5.3' if s.respond_to? :installed_by_version
 
   s.specification_version = 4
 
-  s.add_runtime_dependency(%q<rack>.freeze, [">= 3".freeze])
+  s.add_runtime_dependency('rack', ['>= 3'])
 end

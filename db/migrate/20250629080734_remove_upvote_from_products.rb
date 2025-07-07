@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveUpvoteFromProducts < ActiveRecord::Migration[8.0]
   def change
     remove_column :products, :upvote, :string

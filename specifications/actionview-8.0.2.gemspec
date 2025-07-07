@@ -1,33 +1,37 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 # stub: actionview 8.0.2 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "actionview".freeze
-  s.version = "8.0.2".freeze
+  s.name = 'actionview'
+  s.version = '8.0.2'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
-  s.metadata = { "bug_tracker_uri" => "https://github.com/rails/rails/issues", "changelog_uri" => "https://github.com/rails/rails/blob/v8.0.2/actionview/CHANGELOG.md", "documentation_uri" => "https://api.rubyonrails.org/v8.0.2/", "mailing_list_uri" => "https://discuss.rubyonrails.org/c/rubyonrails-talk", "rubygems_mfa_required" => "true", "source_code_uri" => "https://github.com/rails/rails/tree/v8.0.2/actionview" } if s.respond_to? :metadata=
-  s.require_paths = ["lib".freeze]
-  s.authors = ["David Heinemeier Hansson".freeze]
-  s.date = "2025-03-12"
-  s.description = "Simple, battle-tested conventions and helpers for building web pages.".freeze
-  s.email = "david@loudthinking.com".freeze
-  s.homepage = "https://rubyonrails.org".freeze
-  s.licenses = ["MIT".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 3.2.0".freeze)
-  s.requirements = ["none".freeze]
-  s.rubygems_version = "3.5.3".freeze
-  s.summary = "Rendering framework putting the V in MVC (part of Rails).".freeze
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  if s.respond_to? :metadata=
+    s.metadata = { 'bug_tracker_uri' => 'https://github.com/rails/rails/issues',
+                   'changelog_uri' => 'https://github.com/rails/rails/blob/v8.0.2/actionview/CHANGELOG.md', 'documentation_uri' => 'https://api.rubyonrails.org/v8.0.2/', 'mailing_list_uri' => 'https://discuss.rubyonrails.org/c/rubyonrails-talk', 'rubygems_mfa_required' => 'true', 'source_code_uri' => 'https://github.com/rails/rails/tree/v8.0.2/actionview' }
+  end
+  s.require_paths = ['lib']
+  s.authors = ['David Heinemeier Hansson']
+  s.date = '2025-03-12'
+  s.description = 'Simple, battle-tested conventions and helpers for building web pages.'
+  s.email = 'david@loudthinking.com'
+  s.homepage = 'https://rubyonrails.org'
+  s.licenses = ['MIT']
+  s.required_ruby_version = Gem::Requirement.new('>= 3.2.0')
+  s.requirements = ['none']
+  s.rubygems_version = '3.5.3'
+  s.summary = 'Rendering framework putting the V in MVC (part of Rails).'
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = '3.5.3' if s.respond_to? :installed_by_version
 
   s.specification_version = 4
 
-  s.add_runtime_dependency(%q<activesupport>.freeze, ["= 8.0.2".freeze])
-  s.add_runtime_dependency(%q<builder>.freeze, ["~> 3.1".freeze])
-  s.add_runtime_dependency(%q<erubi>.freeze, ["~> 1.11".freeze])
-  s.add_runtime_dependency(%q<rails-html-sanitizer>.freeze, ["~> 1.6".freeze])
-  s.add_runtime_dependency(%q<rails-dom-testing>.freeze, ["~> 2.2".freeze])
-  s.add_development_dependency(%q<actionpack>.freeze, ["= 8.0.2".freeze])
-  s.add_development_dependency(%q<activemodel>.freeze, ["= 8.0.2".freeze])
+  s.add_runtime_dependency('activesupport', ['= 8.0.2'])
+  s.add_runtime_dependency('builder', ['~> 3.1'])
+  s.add_runtime_dependency('erubi', ['~> 1.11'])
+  s.add_runtime_dependency('rails-dom-testing', ['~> 2.2'])
+  s.add_runtime_dependency('rails-html-sanitizer', ['~> 1.6'])
+  s.add_development_dependency('actionpack', ['= 8.0.2'])
+  s.add_development_dependency('activemodel', ['= 8.0.2'])
 end

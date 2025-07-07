@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FixProductsMakerForeignKey < ActiveRecord::Migration[8.0]
   def change
     # Add the correct foreign key constraint that references 'users' table

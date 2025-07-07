@@ -1,12 +1,11 @@
+# frozen_string_literal: true
+
 require 'swagger_helper'
 
 RSpec.describe 'products', type: :request do
-
   path '/products' do
-
     get('list products') do
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -33,7 +32,7 @@ RSpec.describe 'products', type: :request do
             launch_date: { type: :string, format: :date },
             maker_id: { type: :integer }
           },
-          required: [ 'name', 'tagline', 'maker_id' ]
+          required: %w[name tagline maker_id]
         }
 
         after do |example|
@@ -127,4 +126,4 @@ RSpec.describe 'products', type: :request do
       end
     end
   end
-end 
+end

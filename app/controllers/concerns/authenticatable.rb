@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Authenticatable
   extend ActiveSupport::Concern
 
@@ -10,7 +12,7 @@ module Authenticatable
   def authenticate_user!
     token = extract_token_from_header
     provider = extract_provider_from_header
-    
+
     unless token
       render json: { error: 'Missing authorization token' }, status: :unauthorized
       return
@@ -19,14 +21,14 @@ module Authenticatable
     begin
       auth_service = AuthService.new(token, provider)
       @current_user = auth_service.authenticate
-      
+
       unless @current_user
         render json: { error: 'Invalid token' }, status: :unauthorized
-        return
+        nil
       end
     rescue AuthService::AuthenticationError => e
       render json: { error: e.message }, status: :unauthorized
-      return
+      nil
     end
   end
 
@@ -39,17 +41,17 @@ module Authenticatable
     return nil unless auth_header
 
     # Handle both "Bearer <token>" and "Bearer <provider>:<token>" formats
-    if auth_header.start_with?('Bearer ')
-      token_part = auth_header.sub('Bearer ', '')
-      
-      # Check if token contains provider prefix (e.g., "github:token123")
-      if token_part.include?(':')
-        # Provider is specified in the token itself
-        token_part.split(':', 2).last
-      else
-        # No provider prefix, use the token as-is
-        token_part
-      end
+    return unless auth_header.start_with?('Bearer ')
+
+    token_part = auth_header.sub('Bearer ', '')
+
+    # Check if token contains provider prefix (e.g., "github:token123")
+    if token_part.include?(':')
+      # Provider is specified in the token itself
+      token_part.split(':', 2).last
+    else
+      # No provider prefix, use the token as-is
+      token_part
     end
   end
 
@@ -59,14 +61,14 @@ module Authenticatable
 
     if auth_header.start_with?('Bearer ')
       token_part = auth_header.sub('Bearer ', '')
-      
+
       # Check if token contains provider prefix (e.g., "github:token123")
       if token_part.include?(':')
         provider = token_part.split(':', 2).first
-        return provider if ['google', 'github'].include?(provider)
+        return provider if %w[google github].include?(provider)
       end
     end
-    
+
     'google' # Default to Google if no valid provider found
   end
-end 
+end

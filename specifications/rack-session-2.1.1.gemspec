@@ -1,30 +1,31 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 # stub: rack-session 2.1.1 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "rack-session".freeze
-  s.version = "2.1.1".freeze
+  s.name = 'rack-session'
+  s.version = '2.1.1'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
-  s.metadata = { "rubygems_mfa_required" => "true" } if s.respond_to? :metadata=
-  s.require_paths = ["lib".freeze]
-  s.authors = ["Samuel Williams".freeze, "Jeremy Evans".freeze, "Jon Dufresne".freeze, "Philip Arndt".freeze]
-  s.date = "2025-05-06"
-  s.homepage = "https://github.com/rack/rack-session".freeze
-  s.licenses = ["MIT".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-  s.rubygems_version = "3.5.3".freeze
-  s.summary = "A session implementation for Rack.".freeze
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  s.metadata = { 'rubygems_mfa_required' => 'true' } if s.respond_to? :metadata=
+  s.require_paths = ['lib']
+  s.authors = ['Samuel Williams', 'Jeremy Evans', 'Jon Dufresne', 'Philip Arndt']
+  s.date = '2025-05-06'
+  s.homepage = 'https://github.com/rack/rack-session'
+  s.licenses = ['MIT']
+  s.required_ruby_version = Gem::Requirement.new('>= 2.5')
+  s.rubygems_version = '3.5.3'
+  s.summary = 'A session implementation for Rack.'
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = '3.5.3' if s.respond_to? :installed_by_version
 
   s.specification_version = 4
 
-  s.add_runtime_dependency(%q<base64>.freeze, [">= 0.1.0".freeze])
-  s.add_runtime_dependency(%q<rack>.freeze, [">= 3.0.0".freeze])
-  s.add_development_dependency(%q<bundler>.freeze, [">= 0".freeze])
-  s.add_development_dependency(%q<minitest>.freeze, ["~> 5.0".freeze])
-  s.add_development_dependency(%q<minitest-global_expectations>.freeze, [">= 0".freeze])
-  s.add_development_dependency(%q<minitest-sprint>.freeze, [">= 0".freeze])
-  s.add_development_dependency(%q<rake>.freeze, [">= 0".freeze])
+  s.add_runtime_dependency('base64', ['>= 0.1.0'])
+  s.add_runtime_dependency('rack', ['>= 3.0.0'])
+  s.add_development_dependency('bundler', ['>= 0'])
+  s.add_development_dependency('minitest', ['~> 5.0'])
+  s.add_development_dependency('minitest-global_expectations', ['>= 0'])
+  s.add_development_dependency('minitest-sprint', ['>= 0'])
+  s.add_development_dependency('rake', ['>= 0'])
 end

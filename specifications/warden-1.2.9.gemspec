@@ -1,25 +1,26 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 # stub: warden 1.2.9 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "warden".freeze
-  s.version = "1.2.9".freeze
+  s.name = 'warden'
+  s.version = '1.2.9'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
-  s.require_paths = ["lib".freeze]
-  s.authors = ["Daniel Neighman".freeze, "Justin Smestad".freeze, "Whitney Smestad".freeze, "Jos\u00E9 Valim".freeze]
-  s.date = "2020-08-31"
-  s.email = "hasox.sox@gmail.com justin.smestad@gmail.com whitcolorado@gmail.com".freeze
-  s.extra_rdoc_files = ["LICENSE".freeze, "README.md".freeze]
-  s.files = ["LICENSE".freeze, "README.md".freeze]
-  s.homepage = "https://github.com/hassox/warden".freeze
-  s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.5.3".freeze
-  s.summary = "An authentication library compatible with all Rack-based frameworks".freeze
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  s.require_paths = ['lib']
+  s.authors = ['Daniel Neighman', 'Justin Smestad', 'Whitney Smestad', "Jos\u00E9 Valim"]
+  s.date = '2020-08-31'
+  s.email = 'hasox.sox@gmail.com justin.smestad@gmail.com whitcolorado@gmail.com'
+  s.extra_rdoc_files = ['LICENSE', 'README.md']
+  s.files = ['LICENSE', 'README.md']
+  s.homepage = 'https://github.com/hassox/warden'
+  s.licenses = ['MIT']
+  s.rubygems_version = '3.5.3'
+  s.summary = 'An authentication library compatible with all Rack-based frameworks'
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = '3.5.3' if s.respond_to? :installed_by_version
 
   s.specification_version = 4
 
-  s.add_runtime_dependency(%q<rack>.freeze, [">= 2.0.9".freeze])
+  s.add_runtime_dependency('rack', ['>= 2.0.9'])
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'swagger_helper'
 
 RSpec.describe 'Users API', type: :request do
-
   path '/users' do
     post 'Creates a user' do
       tags 'Users'
@@ -18,7 +19,7 @@ RSpec.describe 'Users API', type: :request do
               full_name: { type: :string },
               headline: { type: :string }
             },
-            required: [ 'email', 'password', 'username' ]
+            required: %w[email password username]
           }
         }
       }
@@ -44,13 +45,13 @@ RSpec.describe 'Users API', type: :request do
 
       response '200', 'user found' do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            email: { type: :string },
-            username: { type: :string },
-            full_name: { type: :string },
-            headline: { type: :string }
-          }
+               properties: {
+                 id: { type: :integer },
+                 email: { type: :string },
+                 username: { type: :string },
+                 full_name: { type: :string },
+                 headline: { type: :string }
+               }
 
         let(:id) { User.create(email: 'foo@bar.com', password: 'password', username: 'foobar').id }
         run_test!
@@ -58,24 +59,24 @@ RSpec.describe 'Users API', type: :request do
     end
 
     put 'Updates a user' do
-        tags 'Users'
-        consumes 'application/json'
-        parameter name: :user, in: :body, schema: {
-          type: :object,
-          properties: {
-            user: {
-              type: :object,
-              properties: {
-                headline: { type: :string }
-              }
+      tags 'Users'
+      consumes 'application/json'
+      parameter name: :user, in: :body, schema: {
+        type: :object,
+        properties: {
+          user: {
+            type: :object,
+            properties: {
+              headline: { type: :string }
             }
           }
         }
-        response '200', 'user updated' do
-            let(:id) { User.create(email: 'foo@bar.com', password: 'password', username: 'foobar').id }
-            let(:user) { { user: { headline: 'A new headline' } } }
-            run_test!
-        end
+      }
+      response '200', 'user updated' do
+        let(:id) { User.create(email: 'foo@bar.com', password: 'password', username: 'foobar').id }
+        let(:user) { { user: { headline: 'A new headline' } } }
+        run_test!
+      end
     end
   end
 
@@ -118,7 +119,7 @@ RSpec.describe 'Users API', type: :request do
         properties: {
           target_id: { type: :integer }
         },
-        required: [ 'target_id' ]
+        required: ['target_id']
       }
 
       response '200', 'user followed' do
@@ -142,7 +143,7 @@ RSpec.describe 'Users API', type: :request do
         properties: {
           target_id: { type: :integer }
         },
-        required: [ 'target_id' ]
+        required: ['target_id']
       }
 
       response '200', 'user unfollowed' do
@@ -155,4 +156,4 @@ RSpec.describe 'Users API', type: :request do
       end
     end
   end
-end 
+end

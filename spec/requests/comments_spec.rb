@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'swagger_helper'
 
 RSpec.describe 'Comments API', type: :request do
-
   path '/products/{product_id}/comments' do
     parameter name: :product_id, in: :path, type: :string
 
@@ -28,7 +29,7 @@ RSpec.describe 'Comments API', type: :request do
               content: { type: :string },
               user_id: { type: :integer }
             },
-            required: [ 'content', 'user_id' ]
+            required: %w[content user_id]
           }
         }
       }
@@ -73,7 +74,7 @@ RSpec.describe 'Comments API', type: :request do
 
     delete 'Deletes a comment' do
       tags 'Comments'
-      
+
       response '204', 'comment deleted' do
         let(:product) { Product.create(name: 'Test Product', tagline: 'A test product', maker_id: 1) }
         let(:product_id) { product.id }
@@ -83,4 +84,4 @@ RSpec.describe 'Comments API', type: :request do
       end
     end
   end
-end 
+end

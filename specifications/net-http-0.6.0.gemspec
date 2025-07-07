@@ -1,27 +1,31 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 # stub: net-http 0.6.0 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "net-http".freeze
-  s.version = "0.6.0".freeze
+  s.name = 'net-http'
+  s.version = '0.6.0'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
-  s.metadata = { "homepage_uri" => "https://github.com/ruby/net-http", "source_code_uri" => "https://github.com/ruby/net-http" } if s.respond_to? :metadata=
-  s.require_paths = ["lib".freeze]
-  s.authors = ["NARUSE, Yui".freeze]
-  s.bindir = "exe".freeze
-  s.date = "2024-12-02"
-  s.description = "HTTP client api for Ruby.".freeze
-  s.email = ["naruse@airemix.jp".freeze]
-  s.homepage = "https://github.com/ruby/net-http".freeze
-  s.licenses = ["Ruby".freeze, "BSD-2-Clause".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.6.0".freeze)
-  s.rubygems_version = "3.5.3".freeze
-  s.summary = "HTTP client api for Ruby.".freeze
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  if s.respond_to? :metadata=
+    s.metadata = { 'homepage_uri' => 'https://github.com/ruby/net-http',
+                   'source_code_uri' => 'https://github.com/ruby/net-http' }
+  end
+  s.require_paths = ['lib']
+  s.authors = ['NARUSE, Yui']
+  s.bindir = 'exe'
+  s.date = '2024-12-02'
+  s.description = 'HTTP client api for Ruby.'
+  s.email = ['naruse@airemix.jp']
+  s.homepage = 'https://github.com/ruby/net-http'
+  s.licenses = ['Ruby', 'BSD-2-Clause']
+  s.required_ruby_version = Gem::Requirement.new('>= 2.6.0')
+  s.rubygems_version = '3.5.3'
+  s.summary = 'HTTP client api for Ruby.'
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = '3.5.3' if s.respond_to? :installed_by_version
 
   s.specification_version = 4
 
-  s.add_runtime_dependency(%q<uri>.freeze, [">= 0".freeze])
+  s.add_runtime_dependency('uri', ['>= 0'])
 end

@@ -1,21 +1,25 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 # stub: parallel 1.27.0 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "parallel".freeze
-  s.version = "1.27.0".freeze
+  s.name = 'parallel'
+  s.version = '1.27.0'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
-  s.metadata = { "bug_tracker_uri" => "https://github.com/grosser/parallel/issues", "documentation_uri" => "https://github.com/grosser/parallel/blob/v1.27.0/Readme.md", "source_code_uri" => "https://github.com/grosser/parallel/tree/v1.27.0", "wiki_uri" => "https://github.com/grosser/parallel/wiki" } if s.respond_to? :metadata=
-  s.require_paths = ["lib".freeze]
-  s.authors = ["Michael Grosser".freeze]
-  s.date = "2025-04-14"
-  s.email = "michael@grosser.it".freeze
-  s.homepage = "https://github.com/grosser/parallel".freeze
-  s.licenses = ["MIT".freeze]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.7".freeze)
-  s.rubygems_version = "3.5.3".freeze
-  s.summary = "Run any kind of code in parallel processes".freeze
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  if s.respond_to? :metadata=
+    s.metadata = { 'bug_tracker_uri' => 'https://github.com/grosser/parallel/issues',
+                   'documentation_uri' => 'https://github.com/grosser/parallel/blob/v1.27.0/Readme.md', 'source_code_uri' => 'https://github.com/grosser/parallel/tree/v1.27.0', 'wiki_uri' => 'https://github.com/grosser/parallel/wiki' }
+  end
+  s.require_paths = ['lib']
+  s.authors = ['Michael Grosser']
+  s.date = '2025-04-14'
+  s.email = 'michael@grosser.it'
+  s.homepage = 'https://github.com/grosser/parallel'
+  s.licenses = ['MIT']
+  s.required_ruby_version = Gem::Requirement.new('>= 2.7')
+  s.rubygems_version = '3.5.3'
+  s.summary = 'Run any kind of code in parallel processes'
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = '3.5.3' if s.respond_to? :installed_by_version
 end
