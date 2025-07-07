@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# ApplicationController handles global controller behavior for the API
 class ApplicationController < ActionController::API
   include Authenticatable
 

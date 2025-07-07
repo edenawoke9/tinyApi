@@ -439,6 +439,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rack-cors
   rails (~> 8.0.1)
+  railties
   rspec-rails
   rswag-api
   rswag-specs

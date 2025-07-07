@@ -65,5 +65,6 @@ group :development, :test do
   gem 'rubocop-rails-omakase', require: false
 
   # RuboCop Discourse
+  gem 'railties'
   gem 'rubocop-discourse'
 end
